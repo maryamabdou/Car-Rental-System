@@ -5,13 +5,13 @@ INSERT INTO car(plate_id,model,`year`,office_loc,car_status) values
 
 
 INSERT INTO customer(national_id,cust_name,email,phone,password) values
-('12345678912345','maryam','maryam@gmail.com','+201006203307','25042000'),
-('98765432123456','shams','shams@gmail.com','+201281063634','14022002'),
-('87654321234567','youmna','youmna@gmail.com','+201004903657','21052001'),
-('12457898765432','youstina','youstina@gmail.com','+201228901109','25112000');
+('12345678912345','maryam','maryam@gmail.com','01006203307','25042000'),
+('98765432123456','shams','shams@gmail.com','01281063634','14022002'),
+('87654321234567','youmna','youmna@gmail.com','01004903657','21052001'),
+('12457898765432','youstina','youstina@gmail.com','01228901109','25112000');
 
 INSERT INTO admin(national_id,admin_name,email,phone,password) values
-('12345678912345','youstina','youstina@gmail.com','+201228901109','25112000');
+('12345678912345','youstina','youstina@gmail.com','01228901109','25112000');
 
 INSERT INTO reserve(national_id, plate_id, start_date, end_date) values
 ('12345678912345','1234','2022-12-22','2022-12-25'),

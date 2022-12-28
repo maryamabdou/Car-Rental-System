@@ -14,16 +14,14 @@
   <body>
     <nav>
         <div class="nav nav-tabs  nav-fill" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-          <button class="nav-link" id="nav-reserve-tab" data-bs-toggle="tab" data-bs-target="#nav-reserve" type="button" role="tab" aria-controls="nav-reserve" aria-selected="false">Reservation</button>
+          <button class="nav-link active" id="nav-reserve-tab" data-bs-toggle="tab" data-bs-target="#nav-reserve" type="button" role="tab" aria-controls="nav-reserve" aria-selected="true">Reservation</button>
           <button class="nav-link" id="nav-pickup-tab" data-bs-toggle="tab" data-bs-target="#nav-pickup" type="button" role="tab" aria-controls="nav-pickup" aria-selected="false">Pick Up</button>
           <button class="nav-link" id="nav-return-tab" data-bs-toggle="tab" data-bs-target="#nav-return" type="button" role="tab" aria-controls="nav-return" aria-selected="false">Return</button>
           <button class="nav-link" id="nav-pay-tab" data-bs-toggle="tab" data-bs-target="#nav-pay" type="button" role="tab" aria-controls="nav-pay" aria-selected="false">Pay</button>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
-        <div class="tab-pane fade" id="nav-reserve" role="tabpanel" aria-labelledby="nav-reserve-tab">
+        <div class="tab-pane fade show active" id="nav-reserve" role="tabpanel" aria-labelledby="nav-reserve-tab">
             <form id="Car Reservation"  onsubmit="return validateReserveForm()" action="car_option.php" method="post">
                 <h1>Car Reservation</h1>
                 <label for="pick_up_date"><strong>PickUp Date</strong></label>

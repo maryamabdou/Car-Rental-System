@@ -32,18 +32,3 @@ INSERT INTO payment(reserve_id, price , payment_date) values
 ('1','10000','2022-12-30'),
 ('2','20000','2022-12-25'),
 ('3','50000','2023-1-1');
-
-2-SELECT plate_id, model, `year`, car_status, office_loc FROM car
-NATURAL JOIN reserve
-NATURAL JOIN `Return`
-WHERE plate_id = '1234' and return_date >= '2022-12-20' and return_date <= '2022-12-26';
-
-4-SELECT National_id, cust_name, email, phone , plate_id, model FROM Customer
-NATURAL JOIN reserve
-NATURAL JOIN car
-WHERE National_id = '12345678912345' ;
-
-5-SELECT payment_date, price, plate_id FROM payment 
-NATURAL JOIN reserve
-WHERE payment_date >= '2022-12-25' and payment_date <= '2023-2-2'
-GROUP BY payment_date;

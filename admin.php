@@ -24,19 +24,7 @@
         
         <!-- content of register car -->
         <div class="tab-pane fade show active" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-            <form id="Car_Edit"  action="car_edit.php" onsubmit="validateEditForm()" method="post">
-                <h1>Car Edit</h1>
-                <label for="plate_id"><strong>Plate ID</strong></label>
-                <input type="text" id="plate_id" name="plate_id" placeholder="Enter Plate ID">
-                <label for="car_status"><strong>Car Status</strong></label>
-                <input type="text" id="car_status" name="car_status" placeholder="Enter Car Status">
-                <input type="submit" name="edit" value="Edit">
-            </form>
-        </div>
-
-        <!-- content of edit car -->
-        <div class="tab-pane fade" id="nav-edit" role="tabpanel" aria-labelledby="nav-edit-tab">
-            <form id="Car_Registeration"  onsubmit="validateRegisterForm()" action="car_register.php" method="post">
+        <form id="Car_Registeration"  onsubmit="validateRegisterForm()" action="car_register.php" method="post">
                 <h1>Car Registeration</h1>
                 <label for="model"><strong>Model</strong></label>
                 <input type="text" id="model" name="model" placeholder="Enter Model" >
@@ -47,6 +35,18 @@
                 <label for="location"><strong>Office Location</strong></label>
                 <input type="text" id="location" name="location" placeholder="Enter Location">
                 <input type="submit" name="register" value="Register">
+            </form>
+        </div>
+
+        <!-- content of edit car -->
+        <div class="tab-pane fade" id="nav-edit" role="tabpanel" aria-labelledby="nav-edit-tab">
+            <form id="Car_Edit"  action="car_edit.php" onsubmit="validateEditForm()" method="post">
+                <h1>Car Edit</h1>
+                <label for="plateId"><strong>Plate ID</strong></label>
+                <input type="text" id="plateId" name="plateId" placeholder="Enter Plate ID">
+                <label for="car_status"><strong>Car Status</strong></label>
+                <input type="text" id="car_status" name="car_status" placeholder="Enter Car Status">
+                <input type="submit" name="edit" value="Edit">
             </form>
         </div>
 
@@ -178,9 +178,9 @@
       </div>
       <script>
         function validateEditForm(){
-            var plate_id = document.getElementById('plate_id').value;
+            var plateId = document.getElementById('plateId').value;
             var car_status = document.getElementById('car_status').value;
-            if(plate_id == '')
+            if(plateId == '')
             {
                 alert("You need to fill the plate id field");
             }
@@ -191,6 +191,7 @@
         }
 
         function validateRegisterForm(){
+            var check = 0;
             var model = document.getElementById('model').value;
             var plate_id = document.getElementById('plate_id').value;
             var year = document.getElementById('year').value;
@@ -198,18 +199,26 @@
             if(model == '')
             {
                 alert("You need to fill the model field");
+                check = 1;
             }
             if(plate_id == '')
             {
                 alert("You need to fill the plate id field");
+                check = 1;
             }
             if(year == '')
             {
                 alert("You need to fill the year field");
+                check = 1;
             }
             if(location == '')
             {
                 alert("You need to fill the location field");
+                check = 1;
+            }
+            if(check == 1)
+            {
+                return false;
             }
 
         }

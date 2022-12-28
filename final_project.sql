@@ -4,7 +4,7 @@ CREATE Table Customer (
     National_id bigint ,
     cust_name varchar(50) not null,
     email varchar(50) not null,
-    phone int not null ,
+    phone varchar(12)  not null ,
     password varchar(20) not null,
     primary key (National_id)
 );
@@ -13,7 +13,7 @@ CREATE Table Admin (
     National_id bigint ,
     admin_name varchar(50) not null,
     email varchar(50) not null,
-    phone int not null ,
+    phone varchar(12)  not null ,
     password varchar(20) not null,
     primary key (National_id)
 );

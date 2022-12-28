@@ -1,0 +1,167 @@
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+  </head>
+  <body>
+    <nav>
+        <div class="nav nav-tabs  nav-fill" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+          <button class="nav-link" id="nav-reserve-tab" data-bs-toggle="tab" data-bs-target="#nav-reserve" type="button" role="tab" aria-controls="nav-reserve" aria-selected="false">Reservation</button>
+          <button class="nav-link" id="nav-pickup-tab" data-bs-toggle="tab" data-bs-target="#nav-pickup" type="button" role="tab" aria-controls="nav-pickup" aria-selected="false">Pick Up</button>
+          <button class="nav-link" id="nav-return-tab" data-bs-toggle="tab" data-bs-target="#nav-return" type="button" role="tab" aria-controls="nav-return" aria-selected="false">Return</button>
+          <button class="nav-link" id="nav-pay-tab" data-bs-toggle="tab" data-bs-target="#nav-pay" type="button" role="tab" aria-controls="nav-pay" aria-selected="false">Pay</button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+        <div class="tab-pane fade" id="nav-reserve" role="tabpanel" aria-labelledby="nav-reserve-tab">
+            <form id="Car Reservation"  onsubmit="return validateReserveForm()" action="car_option.php" method="post">
+                <h1>Car Reservation</h1>
+                <label for="pick_up_date"><strong>PickUp Date</strong></label>
+                <input type="text" id="pick_up_date" name="pick_up_date" placeholder="Enter PickUp Date" >
+                <label for="return_date"><strong>Return Date</strong></label>
+                <input type="text" id="return_date" name="return_date" placeholder="Enter Return Date">
+                <input type="submit" name="submit" value="submit">
+          </form>
+        </div>
+        <div class="tab-pane fade" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup-tab">
+            <form id="Car Pickup"  onsubmit="return validatePickupForm()" action="pickup_connect.php" method="post">
+                <h1>Car PickUp</h1>
+                <label for="reserve_id"><strong>Reservation ID</strong></label>
+                <input type="text" id="reserve_id" name="reserve_id" placeholder="Enter Reservation ID">
+                <label for="pick_up_date"><strong>PickUp Date</strong></label>
+                <input type="text" id="pick_up_date" name="pick_up_date" placeholder="Enter PickUp Date" >
+                <input type="submit" name="pickup" value="submit">
+            </form>
+        </div>
+        <div class="tab-pane fade" id="nav-return" role="tabpanel" aria-labelledby="nav-return-tab">
+            <form id="Car Return"  onsubmit="return validateReturnForm()" action="return_connect.php" method="post">
+                <h1>Car Return</h1>
+                <label for="reserve_id"><strong>Reservation ID</strong></label>
+                <input type="text" id="reserve_id" name="reserve_id" placeholder="Enter Reservation ID">
+                <label for="return_date"><strong>Return Date</strong></label>
+                <input type="text" id="return_date" name="return_date" placeholder="Enter Return Date" >
+                <input type="submit" name="return" value="submit">
+            </form>
+        </div>
+        <div class="tab-pane fade" id="nav-pay" role="tabpanel" aria-labelledby="nav-pay-tab">
+            <form id="Car Payment"  onsubmit="return validatePayForm()" action="pay_connect.php" method="post">
+                <h1>Car Payment</h1>
+                <label for="reserve_id"><strong>Reservation ID</strong></label>
+                <input type="text" id="reserve_id" name="reserve_id" placeholder="Enter Reservation ID">
+                <label for="payment"><strong>Payment</strong></label>
+                <input type="text" id="payment" name="payment" placeholder="Enter Payment" >
+                <label for="payment_date"><strong>Payment Date</strong></label>
+                <input type="text" id="payment_date" name="payment_date" placeholder="Enter Payment Date" >
+                <input type="submit" name="pay" value="submit">
+            </form>
+        </div>
+      </div>
+      <script>
+
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+			
+		function validateReserveForm(){
+		var check = 0;
+		var pickup_date = document.getElementById('pick_up_date').value;
+		var return_date = document.getElementById('return_date').value;
+		if(pickup_date == '')
+		{
+			alert("You need to fill the pick up date field");
+			check = 1;
+		}
+		if(return_date == '')
+		{
+			alert("You need to fill the return date field");
+			check = 1;
+		}
+		if(pickup_date > return_date)
+		{
+			alert("Enter valid dates");
+			check = 1;
+		}
+		if(check == 1)
+		{
+			return false;
+		}
+    }
+	
+	function validatePickupForm(){
+		var check = 0;
+		var reserve_id = document.getElementById('reserve_id').value;
+		var pickup_date = document.getElementById('pick_up_date').value;
+		if(reserve_id == '')
+		{
+			alert("You need to fill the reserve id field");
+			check = 1;
+		}
+		if(pickup_date == '')
+		{
+			alert("You need to fill the pickup date field");
+			check = 1;
+		}
+		if(check == 1)
+		{
+			return false;
+		}
+    }
+	
+	function validateReturnForm(){
+		var check = 0;
+		var reserve_id = document.getElementById('reserve_id').value;
+		var return_date = document.getElementById('return_date').value;
+		if(reserve_id == '')
+		{
+			alert("You need to fill the reserve id field");
+			check = 1;
+		}
+		if(return_date == '')
+		{
+			alert("You need to fill the return date field");
+			check = 1;
+		}
+		if(check == 1)
+		{
+			return false;
+		}
+    }
+	
+	function validatePayForm(){
+		var check = 0;
+		var reserve_id = document.getElementById('reserve_id').value;
+		var payment = document.getElementById('payment').value;
+		var payment_date = document.getElementById('payment_date').value;
+		if(reserve_id == '')
+		{
+			alert("You need to fill the reserve id field");
+			check = 1;
+		}
+		if(payment == '')
+		{
+			alert("You need to fill the payment field");
+			check = 1;
+		}
+		if(payment_date == '')
+		{
+			alert("You need to fill the payment date field");
+			check = 1;
+		}
+		if(check == 1)
+		{
+			return false;
+		}
+    }
+      </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap Example</title>
+   <link rel = "stylesheet" href = "websiteadmin.css"> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -14,10 +14,9 @@
     <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
   </head>
 <body>
+<div class = "container">
 
-<h1><?php echo "The optgroup element" ?></h1>
-
-<p>The optgroup tag is used to group related options in a drop-down list:</p>
+<h1><?php echo "Available Cars" ?></h1>
 
 <form action="reserve.php" method="Post">
 	<?php 

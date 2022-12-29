@@ -39,7 +39,7 @@
         $sql = "INSERT INTO Customer (National_id, cust_name, email, phone, password) VALUES ('$national_id','$name','$email', '$phone', '$password')";
             
             if(mysqli_query($con, $sql)){
-                header("Location: http://localhost/final/outline.html", TRUE, 301);
+                header("Location:outline.html", TRUE, 301);
                 exit();
             } else{
                 echo "ERROR: Hush! Sorry $sql. "

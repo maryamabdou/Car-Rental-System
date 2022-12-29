@@ -53,7 +53,7 @@
             
             if($count == 1){ 
                 $admin_name = $select->fetch_object()->admin_name; 
-                header("Location: http://localhost/final/admin.html", TRUE, 301);
+                header("Location:admin.php", TRUE, 301);
                 exit();
             }  
             else{   

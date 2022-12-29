@@ -72,10 +72,6 @@ select{
     height: 40px;
 }
 
-.tab-pane{
-    color: white;
-}
-
 table td,th{
     /* background-color: white; */
     color: white !important;

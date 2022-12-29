@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+    <link rel = "stylesheet" href = "websitefirstpage.css"> 
+    <title>Car Rental System</title>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>  
+<body>  
+    <div class = "container">
+    <div id = "frm">  
+        <h1>Login</h1> 
+        <form name ="f1" action = "Firstpage.php"  method = "POST">  
+            <p>  
+                <label for = "email"> E-mail: </label>  
+                <input type = "email" id ="email" name  = "email" />  
+            </p>  
+            <p>  
+                <label for = "password"> Password: </label>  
+                <input type = "password" id ="password" name  = "password" /> 
+            </p>  
+           
+            <input type="radio" id="radioadmin" name="radio"  value="Admin" ><label>Admin</label>
+            <input type="radio" id="radiocustomer" name="radio" value="Customer"><label>Customer</label>
+
+            <p>     
+                <!-- <input type="submit" name="login" value="Login">   -->
+                <button type="submit" name="login" class="btn btn-success">
+                    Submit
+                  </button>
+            </p>
+        </form> 
+    </div> 
+    </div>
+    <script type="text/javascript"> 
+    $(document).ready(function () {
+  $("form").submit(function (event) {
+    var formData = {
+      password: $("#password").val(),
+      email: $("#email").val(),
+      radio: $("input[type='radio'][name='radio']:checked").val(),
+     
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "Firstpage.php",
+      data: formData,
+      dataType: "json",
+      encode: true,
+    }).done(function (data) {
+        if (data['type']=='Customer' && data['success']== true ){
+            sessionStorage.setItem('data',data['national_id']);
+            location.replace("customer.html");
+        } else if (data['type']=='Customer' && data['success']== false )
+        {
+            alert(data['message']);
+        } else if (data['type']=='Admin' && data['success']== true )
+        {
+            location.replace("admin.php");
+        } else if (data['type']=='Admin' && data['success']== false )
+        {
+            alert(data['message']);
+        }
+       
+      console.log(data);
+     // alert(data['message']);
+    });
+
+    event.preventDefault();
+  });
+});
+    </script> 
+    <script>  
+            function validation()  
+            {  
+                var email=document.f1.email.value;  
+                var pass=document.f1.password.value;
+                var at = email.lastIndexOf("@");
+	            var dot = email.lastIndexOf(".com"); 
+ 
+                if(email.length=="" && pass.length=="") {  
+                    alert("E-mail and Password fields are empty");  
+                    return false;  
+                }  
+                else  
+                {  
+                    if(email.length=="") {  
+                        alert("E-mail field is empty"); 
+                        return false;  
+                    }   
+                    if (pass.length=="") {  
+                    alert("Password field is empty");  
+                    return false;  
+                    }  
+                    if (at > 0 && dot > at + 1 && dot < myemail.length - 1){
+                        return true;
+                    } else {
+                        alert("Invalid E-mail. Please try again.");  
+                        return false;
+                    
+                    }   
+                }
+            }   
+           
+    </script>  
+</body>     
+</html>

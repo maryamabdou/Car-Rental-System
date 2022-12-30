@@ -262,6 +262,10 @@
 
                 return false;
             }
+	    if(s > e){
+	    	alert("Please enter valid dates");
+                return false;
+	    }
         }
 
         function validation2(){
@@ -286,6 +290,10 @@
 
                 return false;
             }
+	    if(s > e){
+	    	alert("Please enter valid dates");
+                return false;
+	    }
         }
 
         function validation3(){
@@ -324,6 +332,10 @@
 
                 return false;
             }
+             if(s > e){
+	    	alert("Please enter valid dates");
+                return false;
+	    }
         }
 
         

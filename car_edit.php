@@ -17,10 +17,10 @@
 		   $sql = " UPDATE Car SET car_status = '$car_status'  WHERE plate_id =  '$plate_id'";
 		   mysqli_query($link, $sql);
 		   mysqli_close($link);
+		   echo '<script>alert("Car edited successfully")</script>';
 		   
 		}
 	 
-	 echo '<script>alert("Car edited successfully")</script>';
 		   $script = "<script>
 		   location = 'admin.php';</script>";
 		   echo $script;

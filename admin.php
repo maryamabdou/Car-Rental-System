@@ -26,7 +26,7 @@
         
         <!-- content of register car -->
         <div class="tab-pane fade show active" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-        <form id="Car_Registeration"  onsubmit="validateRegisterForm()" action="car_register.php" method="post">
+        <form id="Car_Registeration"  onsubmit="return validateRegisterForm()" action="car_register.php" method="post">
                 <h1>Car Registeration</h1>
                 <label for="model"><strong>Model</strong></label>
                 <input type="text" id="model" name="model" placeholder="Enter Model" >
@@ -42,7 +42,7 @@
 
         <!-- content of edit car -->
         <div class="tab-pane fade" id="nav-edit" role="tabpanel" aria-labelledby="nav-edit-tab">
-            <form id="Car_Edit"  action="car_edit.php" onsubmit="validateEditForm()" method="post">
+            <form id="Car_Edit"  action="car_edit.php" onsubmit="return validateEditForm()" method="post">
                 <h1>Car Edit</h1>
                 <label for="plateId"><strong>Plate ID</strong></label>
                 <input type="text" id="plateId" name="plateId" placeholder="Enter Plate ID">

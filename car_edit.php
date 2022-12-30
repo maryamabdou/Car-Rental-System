@@ -7,7 +7,7 @@
     mysqli_select_db($link ,'car_rental_system') or die(mysqli_error());
        $sql = " SELECT * FROM car WHERE plate_id =  '$plate_id'";
        $select = mysqli_query($link, $sql);
-       mysqli_close($link);
+      // mysqli_close($link);
 	   if(mysqli_num_rows($select) == 0)
 	   {
 			echo '<script>alert("Wrong Plate ID. Please re-enter")</script>';

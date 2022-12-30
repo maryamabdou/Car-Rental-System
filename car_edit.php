@@ -11,9 +11,6 @@
 	   if(mysqli_num_rows($select) == 0)
 	   {
 			echo '<script>alert("Wrong Plate ID. Please re-enter")</script>';
-			$script = "<script>
-			location = 'admin.php';</script>";
-			echo $script;
 	   }
 	   else
 	    {
@@ -21,11 +18,12 @@
 		   mysqli_query($link, $sql);
 		   mysqli_close($link);
 		   
-		   echo '<script>alert("Car edited successfully")</script>';
+		}
+	 
+	 echo '<script>alert("Car edited successfully")</script>';
 		   $script = "<script>
 		   location = 'admin.php';</script>";
 		   echo $script;
-		}
  }
 
 ?>

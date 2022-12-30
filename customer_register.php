@@ -22,14 +22,14 @@
 
     if(mysqli_num_rows($select_email)) {
         echo "<script>
-            window.location.href = 'http://localhost/final/customer_register.html';
+            window.location.href = 'customer_register.html';
             alert('E-mail already exists');
         </script>";
     }
 
     else if(mysqli_num_rows($select_national)) {
         echo "<script>
-            window.location.href = 'http://localhost/final/customer_register.html';
+            window.location.href = 'customer_register.html';
             alert('National ID already exists');
         </script>";
     }

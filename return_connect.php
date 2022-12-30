@@ -1,14 +1,14 @@
 <html>
 <?php
  if (isset($_POST['return'])) {
-    $reserve_id = $_POST['reserve_id'];
-    $return_date = $_POST['return_date'];
+    $reserve_id = $_POST['reserve_id3'];
+    $return_date = $_POST['return_date2'];
     $link = mysqli_connect('localhost', 'root', '') or die(mysqli_error());
     mysqli_select_db($link ,'car_rental_system') or die(mysqli_error());
 	
 	$sql = " SELECT * FROM reserve WHERE reserve_id =  '$reserve_id'";
-   mysqli_query($link, $sql);
-   mysqli_close($link);
+   $select = mysqli_query($link, $sql);
+//    mysqli_close($link);
    if(mysqli_num_rows($select) == 0)
    {
 		echo '<script>alert("Wrong Reserve ID. Please re-enter.")</script>';

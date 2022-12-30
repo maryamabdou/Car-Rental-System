@@ -36,9 +36,9 @@
             <form id="Car Pickup"  onsubmit="return validatePickupForm()" action="pickup_connect.php" method="post">
                 <h1>Car PickUp</h1>
                 <label for="reserve_id"><strong>Reservation ID</strong></label>
-                <input type="text" id="reserve_id" name="reserve_id" placeholder="Enter Reservation ID">
+                <input type="text" id="reserve_id2" name="reserve_id2" placeholder="Enter Reservation ID">
                 <label for="pick_up_date"><strong>PickUp Date</strong></label>
-                <input type="text" id="pick_up_date" name="pick_up_date" placeholder="Enter PickUp Date" >
+                <input type="text" id="pick_up_date2" name="pick_up_date2" placeholder="Enter PickUp Date" >
                 <input type="submit" name="pickup" value="submit">
             </form>
         </div>
@@ -46,9 +46,9 @@
             <form id="Car Return"  onsubmit="return validateReturnForm()" action="return_connect.php" method="post">
                 <h1>Car Return</h1>
                 <label for="reserve_id"><strong>Reservation ID</strong></label>
-                <input type="text" id="reserve_id" name="reserve_id" placeholder="Enter Reservation ID">
+                <input type="text" id="reserve_id3" name="reserve_id3" placeholder="Enter Reservation ID">
                 <label for="return_date"><strong>Return Date</strong></label>
-                <input type="text" id="return_date" name="return_date" placeholder="Enter Return Date" >
+                <input type="text" id="return_date2" name="return_date2" placeholder="Enter Return Date" >
                 <input type="submit" name="return" value="submit">
             </form>
         </div>
@@ -56,7 +56,7 @@
             <form id="Car Payment"  onsubmit="return validatePayForm()" action="pay_connect.php" method="post">
                 <h1>Car Payment</h1>
                 <label for="reserve_id"><strong>Reservation ID</strong></label>
-                <input type="text" id="reserve_id" name="reserve_id" placeholder="Enter Reservation ID">
+                <input type="text" id="reserve_id4" name="reserve_id4" placeholder="Enter Reservation ID">
                 <label for="payment"><strong>Payment</strong></label>
                 <input type="text" id="payment" name="payment" placeholder="Enter Payment" >
                 <label for="payment_date"><strong>Payment Date</strong></label>
@@ -101,8 +101,8 @@
 	
 	function validatePickupForm(){
 		var check = 0;
-		var reserve_id = document.getElementById('reserve_id').value;
-		var pickup_date = document.getElementById('pick_up_date').value;
+		var reserve_id = document.getElementById('reserve_id2').value;
+		var pickup_date = document.getElementById('pick_up_date2').value;
 		if(reserve_id == '')
 		{
 			alert("You need to fill the reserve id field");
@@ -121,8 +121,8 @@
 	
 	function validateReturnForm(){
 		var check = 0;
-		var reserve_id = document.getElementById('reserve_id').value;
-		var return_date = document.getElementById('return_date').value;
+		var reserve_id = document.getElementById('reserve_id3').value;
+		var return_date = document.getElementById('return_date2').value;
 		if(reserve_id == '')
 		{
 			alert("You need to fill the reserve id field");
@@ -141,7 +141,7 @@
 	
 	function validatePayForm(){
 		var check = 0;
-		var reserve_id = document.getElementById('reserve_id').value;
+		var reserve_id = document.getElementById('reserve_id4').value;
 		var payment = document.getElementById('payment').value;
 		var payment_date = document.getElementById('payment_date').value;
 		if(reserve_id == '')

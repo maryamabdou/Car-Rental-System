@@ -1,15 +1,15 @@
 <html>
 <?php
  if (isset($_POST['pay'])) {
-    $reserve_id = $_POST['reserve_id'];
+    $reserve_id = $_POST['reserve_id4'];
     $payment_date = $_POST['payment_date'];
 	$payment = $_POST['payment'];
     $link = mysqli_connect('localhost', 'root', '') or die(mysqli_error());
     mysqli_select_db($link ,'car_rental_system') or die(mysqli_error());
 	
 	$sql = " SELECT * FROM reserve WHERE reserve_id =  '$reserve_id'";
-   mysqli_query($link, $sql);
-   mysqli_close($link);
+   $select = mysqli_query($link, $sql);
+//    mysqli_close($link);
    if(mysqli_num_rows($select) == 0)
    {
 		echo '<script>alert("Wrong Reserve ID. Please re-enter.")</script>';

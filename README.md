@@ -62,3 +62,4 @@ Customer enters the reserve id and the date of return so that he could return th
 Customer enters the reserve id, the date of payment and the price to be paid so that he could pay the reservation of the car.
  
 <img src="/screenshots/pay.png">
+

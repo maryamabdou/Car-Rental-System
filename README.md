@@ -51,7 +51,7 @@ Reserve: customer enters the start and end date of reservation, then a table of 
 #### Pickup: 
 Customer enters the reserve id and the date of pick up so that he could pick up the car he reserved.
 
-<img src="/screenshots/pickup.png">
+<img src="/screenshots/picjup.png">
  
 #### Return: 
 Customer enters the reserve id and the date of return so that he could return the car he reserved.

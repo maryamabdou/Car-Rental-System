@@ -16,7 +16,7 @@ The user inserts the email and password and chooses if they are an admin or a cu
 
 <img src="/screenshots/login.png">
  
-### Admin:
+## Admin:
 If the user is an admin, they get the following screen with the option to register a new car entry, edit an existing car entry, look up any required reports, or search for any car or customer information. 
 
 ### Register: 
@@ -44,7 +44,7 @@ Admin can search by any of the car information, customer information or reservat
 
 <img src="/screenshots/admin search.png">
 
-### Customer:
+## Customer:
 If the user is a customer, they get the following screen with the option to reserve a car, pick up a car, return a car, or pay for a car	
 Reserve: customer enters the start and end date of reservation, then a table of all available cars is shown and the user can select any available car to reserve in the period he entered. After reservation, the customer gets his reserve id.
 

@@ -8,18 +8,26 @@ Contains the login and register button. Customers can register if they don’t h
  
 #### Register:
 The user (customer) can create an account through this screen.
+
+<img src="/screenshots/register.png">
  
 #### Login:
 The user inserts the email and password and chooses if they are an admin or a customer.
+
+<img src="/screenshots/login.png">
  
 #### Admin:
 If the user is an admin, they get the following screen with the option to register a new car entry, edit an existing car entry, look up any required reports, or search for any car or customer information. 
 
 #### Register: 
 Admin can register a new car to the database
+
+<img src="/screenshots/admin register.png">
  
 #### Edit: 
 Admin can edit any information of an existing car
+
+<img src="/screenshots/admin edit.png">
 
 #### Reports: 
 Admin can view and print any report of the following <br />
@@ -28,9 +36,12 @@ Admin can view and print any report of the following <br />
 ●	Report 3: The status of all cars on a specific day inserted by the admin. <br />
 ●	Report 4: All reservations of specific customers including customer information, car model and plate id. <br />
 ●	Report 5: Daily payments within a specific period inserted by the admin. <br />
+<img src="/screenshots/reports.png">
 
 #### Search: 
 Admin can search by any of the car information, customer information or reservation day and get all information about the car, customer and reservation.
+
+<img src="/screenshots/admin search.png">
 
 #### Customer:
 If the user is a customer, they get the following screen with the option to reserve a car, pick up a car, return a car, or pay for a car	
@@ -38,11 +49,15 @@ Reserve: customer enters the start and end date of reservation, then a table of 
 
 #### Pickup: 
 Customer enters the reserve id and the date of pick up so that he could pick up the car he reserved.
+
+<img src="/screenshots/pickup.png">
  
 #### Return: 
 Customer enters the reserve id and the date of return so that he could return the car he reserved.
+
+<img src="/screenshots/return.png">
  
 #### Pay: 
 Customer enters the reserve id, the date of payment and the price to be paid so that he could pay the reservation of the car.
  
-
+<img src="/screenshots/pay.png">

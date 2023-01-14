@@ -3,6 +3,7 @@
 
 #### Outline:
 Contains the login and register button. Customers can register if they don’t have an account. 
+
 <img src="/screenshots/outline.png">
  
 #### Register:

@@ -36,6 +36,7 @@ Admin can view and print any report of the following <br />
 ●	Report 3: The status of all cars on a specific day inserted by the admin. <br />
 ●	Report 4: All reservations of specific customers including customer information, car model and plate id. <br />
 ●	Report 5: Daily payments within a specific period inserted by the admin. <br />
+
 <img src="/screenshots/reports.png">
 
 #### Search: 
